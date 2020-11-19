@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personData</title>
+</head>
+
+<body>
+    <script>
+        // 3. Feladat
+        // Hozz létre egy függvény kifejezést arrow functionnel! 
+        // A függvény neve personDataLog legyen. 
+        // A függvény paraméterként egy objektumot vár, ami egy firstname, lastname, 
+        // és age tulajdonságokkal rendelkezik. 
+        // Amennyiben bármelyik tulajdonság hiányozna, 
+        // úgy rendre a következő alapértelemezett értékeket vegyék fel: 
+        // - firstname: John - lastname: Doe - age: 33
+
+        // A függvény kiírja az adott illető adatai a konzolra az adott formátumban:
+        // My name is firstname, lastname. I'm age years old.
+        // A firstname, lastname és age helyére 
+        // a paraméterként kapott objektum tulajdonságok értékét kell behelyettesíteni.
+
+        'use strict';
+
+        const personDataLog = (person = { firstname: "John", lastname: "Doe", age: 33 }) => {
+            if (person.firstname == undefined) { person.firstname = "John" };
+            if (person.lastname == undefined) { person.lastname = "Doe" };
+            if (person.age == undefined) { person.age = 33 };
+            console.log("My name is " + person.firstname + " " + person.lastname + ". I'm "
+                + person.age + " years old.");
+        };
+
+        personDataLog();      //  My name is John Doe. I'm 33 years old.
+
+        const newPerson = {
+            firstname: "Gabor",
+            lastname: "Nagy",
+        };
+
+        personDataLog(newPerson);    // My name is Gabor Nagy. I'm 33 years old.
+
+    </script>
+
+</body>
+
+</html>
